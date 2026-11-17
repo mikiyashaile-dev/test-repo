@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>miki – Developer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--ink:#fff;--mute:#a8a8a8;--lime:#96ff00;--card:#111;--hl:#f7eeb2;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Jost,"Segoe UI",Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(0,0,0,.82);backdrop-filter:blur(8px);padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-size:32px;font-weight:500;letter-spacing:-1px}.logo i{color:var(--lime);font-style:normal}
+nav{display:flex;gap:34px;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+nav a{padding:6px 0;border-bottom:2px solid transparent}nav a:hover,nav a.on{border-color:var(--ink)}
+.btn{display:inline-block;border:1px solid #444;background:#000;padding:10px 22px;font-size:14px;font-weight:500;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--lime);color:#000;border-color:var(--lime)}
+.btn.top{border-color:#fff;background:#000}
+/* hero */
+.hero{min-height:100vh;display:grid;grid-template-columns:62% 38%;position:relative;overflow:hidden}
+.hero-l{display:flex;flex-direction:column;justify-content:center;padding:120px 28px 60px max(28px,calc((100vw - 1200px)/2 + 28px))}
+.hero-l h1{font-size:clamp(48px,7vw,92px);font-weight:400;line-height:1.05;margin:0 0 26px;letter-spacing:-1px}
+.tag{align-self:flex-start;background:var(--hl);color:#000;font-weight:600;letter-spacing:.14em;font-size:clamp(14px,1.6vw,20px);padding:6px 16px;outline:2px solid var(--lime);outline-offset:2px;min-height:42px}
+.tag::after{content:"";display:inline-block;width:2px;height:1em;background:#000;margin-left:3px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-l .btn{align-self:flex-start;margin-top:34px;font-size:13px}
+.stats{display:flex;gap:44px;margin-top:70px;flex-wrap:wrap}
+.stats b{display:block;font-size:30px;font-weight:600}.stats b span{color:var(--lime)}
+.stats small{color:var(--mute);font-size:13px}
+.hero-r{background:var(--lime);position:relative;display:flex;align-items:flex-end;justify-content:center}
+.hero-r img{width:min(420px,100%);height:auto;display:block;margin-left:-18%}
+.photo-ph{width:min(420px,92%);aspect-ratio:3/4;margin-left:-18%}
+.expert{position:absolute;right:20px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-size:11px;letter-spacing:.3em;color:#000;font-weight:500}
+/* sections */
+section{padding:100px 0}
+h2{font-size:clamp(34px,4.5vw,56px);font-weight:400;margin:0 0 44px;letter-spacing:-1px}
+h2 i{font-style:normal;color:var(--lime)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid #222;padding:30px;transition:border-color .2s}
+.card:hover{border-color:var(--lime)}
+.card h3{margin:0 0 10px;font-size:22px;font-weight:500}
+.card p{margin:0;color:var(--mute)}
+.proj{padding:0;overflow:hidden}
+.proj .thumb{aspect-ratio:16/10;background:linear-gradient(135deg,#1b1b1b,#0a0a0a);display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:600;color:var(--lime);border-bottom:1px solid #222}
+.proj div.body{padding:22px 26px 28px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about p{color:var(--mute);font-size:18px;max-width:60ch}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.skills span{border:1px solid #333;padding:6px 16px;font-size:14px}
+.contact{background:var(--lime);color:#000;text-align:center}
+.contact h2{margin-bottom:20px}.contact h2 i{color:#000}
+.contact p{margin:0 auto 30px;max-width:46ch;font-size:18px}
+.contact .btn{background:#000;color:#fff;border-color:#000}.contact .btn:hover{background:#fff;color:#000}
+footer{padding:26px 0;color:var(--mute);font-size:14px;text-align:center}
+@media(max-width:860px){
+ nav{display:none}
+ .hero{grid-template-columns:1fr}
+ .hero-l{padding:110px 24px 40px}
+ .hero-r{min-height:420px}
+ .hero-r img,.photo-ph{margin-left:0}
+ .about{grid-template-columns:1fr;gap:30px}
+ section{padding:70px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tag::after{animation:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <a class="logo" href="#home"><i>.</i></a>
+ <nav><a class="on" href="#home">Home</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#about">About me</a><a href="#contact">Contact</a></nav>
+ <a class="btn top" href="#contact">Let’s talk</a>
+</div></header>
+
+<main>
+<div class="hero" id="home">
+ <div class="hero-l">
+  <h1>I’m Mikiyas.</h1>
+  <div class="tag" id="typed" aria-label="I’m a developer"></div>
+  <a class="btn" href="#contact">Get in touch</a>
+  <div class="stats">
+   <div><b>0<span>+</span></b><small>Google Reviews</small></div>
+   <div><b><span>+</span></b><small>Years Experience</small></div>
+   <div><b>0<span>+</span></b><small>Award Winning</small></div>
+  </div>
+ </div>
+ <div class="hero-r">
+  <!-- Replace this placeholder with your photo -->
+  <svg class="photo-ph" viewBox="0 0 300 400" role="img" aria-label="Your photo goes here">
+   <circle cx="150" cy="150" r="70" fill="#000" opacity=".15"/>
+   <path d="M20 400c0-100 50-160 130-160s130 60 130 160z" fill="#000" opacity=".15"/>
+   <text x="150" y="350" text-anchor="middle" font-size="16" fill="#000" opacity=".6" font-family="Jost,Arial">Your photo here</text>
+  </svg>
+  <div class="expert">MY EXPERTISE</div>
+ </div>
+</div>
+
+<section id="services"><div class="wrap">
+ <h2>My <i>services</i></h2>
+ <div class="grid">
+  <div class="card"><h3>Web development</h3><p>Fast, responsive websites built with HTML, CSS and JavaScript.</p></div>
+  <div class="card"><h3>UI / UX design</h3><p>Clean interfaces designed in Figma, ready to build.</p></div>
+  <div class="card"><h3>Web apps</h3><p>Dashboards, booking tools and custom apps for your business.</p></div>
+  <div class="card"><h3>Maintenance</h3><p>Updates, bug fixes and speed improvements for existing sites.</p></div>
+ </div>
+</div></section>
+
+<section id="projects" style="background:#080808"><div class="wrap">
+ <h2>Latest <i>projects</i></h2>
+ <div class="grid">
+  <a class="card proj" href="#"><div class="thumb">A</div><div class="body"><h3>Project one</h3><p>E-commerce website</p></div></a>
+  <a class="card proj" href="#"><div class="thumb">B</div><div class="body"><h3>Project two</h3><p>Company landing page</p></div></a>
+  <a class="card proj" href="#"><div class="thumb">C</div><div class="body"><h3>Project three</h3><p>Mobile app interface</p></div></a>
+ </div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+ <div>
+  <h2>About <i>me</i></h2>
+  <p>I’m a developer with 15 years of experience building websites and apps that are simple to use and quick to load. I work directly with clients, from first sketch to launch.</p>
+  <div class="skills"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Figma</span></div>
+ </div>
+ <div class="stats" style="margin:0;gap:40px">
+  <div><b>280<span>+</span></b><small>Google Reviews</small></div>
+  <div><b>15<span>+</span></b><small>Years Experience</small></div>
+  <div><b>49<span>+</span></b><small>Awards</small></div>
+ </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+ <h2>Let’s <i>work together</i></h2>
+ <p>Tell me about your project and I’ll reply within one day.</p>
+ <a class="btn" href="mikiyashaile99@gmail.com">mikiyashaile99@gmail.com</a>
+</div></section>
+</main>
+<footer>© 2026 Mikiyas. All rights reserved.</footer>
+
+<script>
+(function(){
+ var el=document.getElementById('typed'),txt='I’M A DEVELOPER',i=0;
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=txt;return}
+ (function t(){el.textContent=txt.slice(0,i);i++;if(i<=txt.length)setTimeout(t,110)})();
+})();
+</script>
+</body>
+</html>
